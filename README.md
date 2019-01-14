@@ -5,5 +5,5 @@
 **Note:**
 * 运行环境： 默认windows系统，安装[ctex](http://www.ctex.org/CTeXDownload/)，linux或其他操作系统需修改字体等参数。已给出样例sample.tex，编辑修改该文件即可。
 * 建议使用TeXworks编辑，选择XeLaTeX+MakeIndex+BibTex编译运行。WinEdt默认环境下可能无法编译。
-* 切换本科生、研究生、博士生论文模版，需修改.tex文件中\documentclass[参数]，以及njuthesis.cfg文件中的相关学位信息，例如：把“本科生”替换为“研究生”或“博士生”。
+* 切换本科生、研究生、博士生论文模版，需修改.tex文件中\documentclass[参数]
 * 使用bibtex文献管理，用编辑器编辑sample.bib文件即可。或使用[JabRef](http://www.jabref.org/)打开。
