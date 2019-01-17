@@ -742,6 +742,10 @@
   \renewcommand{\njut@value@date}{#1}}
 \newcommand*{\englishtitle}[1]{%
   \renewcommand{\njut@value@en@title}{#1}}
+\newcommand*{\titlea}[1]{%
+  \renewcommand{\njut@value@titlea}{#1}}
+\newcommand*{\titleb}[1]{%
+  \renewcommand{\njut@value@titleb}{#1}}
 \newcommand*{\englishauthor}[1]{%
   \renewcommand{\njut@value@en@author}{#1}}
 \newcommand{\englishsupervisor}[1]{%
