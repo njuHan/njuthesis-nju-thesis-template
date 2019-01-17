@@ -812,6 +812,36 @@
   }
   \cleardoublepage
 }
+\newcommand*{\njut@covertable@onelinetitle}{
+  \begin{tabular}{p{7.3em}c}
+      \makebox[7em][s]{\njut@cap@cover@title}
+      & \njutunderline[310pt]{\njut@value@title}\\
+      \makebox[7em][s]{\njut@cap@cover@author}
+      & \njutunderline[310pt]{\njut@value@author}\\
+      \makebox[7em][s]{\njut@cap@cover@major}
+      & \njutunderline[310pt]{\njut@value@major}\\
+      \makebox[7em][s]{\njut@cap@cover@researchfield}
+      & \njutunderline[310pt]{\njut@value@researchfield}\\
+      \makebox[7em][s]{\njut@cap@cover@supervisor}
+      & \njutunderline[310pt]{\njut@value@supervisor}\\
+  \end{tabular}
+}
+\newcommand*{\njut@covertable@twolinetitle}{
+  \begin{tabular}{p{7.3em}c}
+      \makebox[7em][s]{\njut@cap@cover@title}
+      & \njutunderline[310pt]{\njut@value@titlea}\\
+      \makebox[7em][s]{}
+      & \njutunderline[310pt]{\njut@value@titleb}\\
+      \makebox[7em][s]{\njut@cap@cover@author}
+      & \njutunderline[310pt]{\njut@value@author}\\
+      \makebox[7em][s]{\njut@cap@cover@major}
+      & \njutunderline[310pt]{\njut@value@major}\\
+      \makebox[7em][s]{\njut@cap@cover@researchfield}
+      & \njutunderline[310pt]{\njut@value@researchfield}\\
+      \makebox[7em][s]{\njut@cap@cover@supervisor}
+      & \njutunderline[310pt]{\njut@value@supervisor}\\
+  \end{tabular}
+}
 \renewcommand*{\maketitle}{%
   \thispagestyle{empty}
   \pdfbookmark[0]{\njut@cap@cover}{cover}
@@ -828,18 +858,8 @@
     \bf\kaishu\zihao{3}
     \def\tabcolsep{1pt}
     \def\arraystretch{1.5}
-    \begin{tabular}{p{7.3em}c}
-      \makebox[7em][s]{\njut@cap@cover@title}
-      & \njutunderline[310pt]{\njut@value@title}\\
-      \makebox[7em][s]{\njut@cap@cover@author}
-      & \njutunderline[310pt]{\njut@value@author}\\
-      \makebox[7em][s]{\njut@cap@cover@major}
-      & \njutunderline[310pt]{\njut@value@major}\\
-      \makebox[7em][s]{\njut@cap@cover@supervisor}
-      & \njutunderline[310pt]{\njut@value@supervisor}\\
-      \makebox[7em][s]{\njut@cap@cover@researchfield}
-      & \njutunderline[310pt]{\njut@value@researchfield}\\
-    \end{tabular}\egroup}\\
+    \ifdefempty{\njut@cap@cover@title}{\njut@covertable@onelinetitle}{\njut@covertable@twolinetitle}
+    \egroup}\\
     \vskip \stretch{1}
     {\bf\kaishu\zihao{4}\njut@value@date}
   \end{center}
