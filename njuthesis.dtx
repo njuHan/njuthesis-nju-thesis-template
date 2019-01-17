@@ -1,6 +1,6 @@
 % \iffalse meta-comment
 %
-% Copyright (C) 2013-2015, Haixing Hu.
+% Copyright (C) 2013-2018, Haixing Hu.
 % Department of Computer Science and Technology, Nanjing University.
 %
 % This file may be distributed and/or modified under the conditions of the
@@ -24,7 +24,7 @@
 %<cls>\ProvidesClass{njuthesis.cls}
 %<cfg>\ProvidesFile{njuthesis.cfg}
 %<*cls>
- [2015/7/16 v1.1.18 Document Class for the Degree Papers of Nanjing University]
+ [2018/08/07 v1.2.2 Document Class for the Degree Papers of Nanjing University]
 %</cls>
 %<*driver>
 \documentclass[10pt,a4paper,oneside]{ltxdoc}
@@ -111,7 +111,9 @@
 %
 % \MakeShortVerb{\|}
 % \newcommand*{\njuthesis}{\texttt{NJU-Thesis}}
-% \newcommand*{\texlive}{{\TeX}\ Live\ 2012}
+% \newcommand*{\texlive}{{\TeX}\ Live\ 2017}
+% \renewcommand*{\fileversion}{1.2.2}
+% \renewcommand*{\filedate}{\today}
 %
 % \pagestyle{empty}
 % \title{\njuthesis：南京大学学位论文\\
@@ -212,6 +214,14 @@
 %                                 修正了|proof|环境最后的QED符号，
 %                                 修改了|solution|环境的实现方式 \\
 %  v1.1.18 & 2015/07/16 & 胡海星 & 将公设环境|postulate|和定律环境单独编号\\
+%  v1.1.19 & 2016/02/24 & 胡海星 & 提供了论文标题很长时的解决方案；
+%                                 修复了新版|xeCJKfntef|中|\CJKunderline|的颜色
+%                                 设置方式不再兼容|CJKfntef|所引起的问题\\
+%  v1.2.0  & 2017/05/23 & 胡海星 & 修复了本科生论文封面显示``研究生毕业论文''的错误；
+%                                 将封面中的``研究方向''换到``指导老师''前面\\
+%  v1.2.1  & 2017/12/24 & 胡海星 & 修正一些小问题，去除不需要的|dtxlogos|宏包；
+%                                 兼容TeX Live 2017 \\
+%  v1.2.2 & 2018/08/07 & 胡海星 & 更新中文字体下载链接 \\
 % \bottomrule
 % \end{longtable}
 % \end{center}
@@ -255,28 +265,45 @@
 %
 % {\njuthesis}所遵循的南京大学研究生院的要求如下：
 % \begin{itemize}
-% \item \textsl{南京大学硕士答辩流程及相关材料下载}，\\
-% \url{http://gs.nju.edu.cn/content/xw/ss3.htm}
-% \item \textsl{南京大学博士答辩流程及相关材料下载}，\\
-% \url{http://gs.nju.edu.cn/content/xw/bs3.htm}
-% \item \textsl{南京大学博士(硕士)学位论文编写格式规定(试行)}\\
-% \url{http://grawww.nju.edu.cn/content/xw/lwgf.doc}
+% \item \textsl{\sout{南京大学硕士答辩流程及相关材料下载}}，\\
+% \sout{\url{http://gs.nju.edu.cn/content/xw/ss3.htm}}
+% \item \textsl{\sout{南京大学博士答辩流程及相关材料下载}}，\\
+% \sout{\url{http://gs.nju.edu.cn/content/xw/bs3.htm}}
+% \item \textsl{\sout{南京大学博士(硕士)学位论文编写格式规定(试行)}}\\
+% \sout{\url{http://grawww.nju.edu.cn/content/xw/lwgf.doc}}
+% \item \textsl{硕士研究生申请学位材料下载}\\
+% \url{https://grawww.nju.edu.cn/5d/aa/c1077a89514/page.htm}
+% \item \textsl{博士(硕士)学位论文编写格式（供参考)}，\\
+% \url{https://grawww.nju.edu.cn/31/16/c1039a12566/page.htm}
 % \end{itemize}
 %
 % {\njuthesis}所遵循的中华人民共和国国家标准如下：
 % \begin{itemize}
-% \item \std{GB/T 7714-2005}\textsl{文后参考文献著录规则}
-% \item \std{GB/T 7713.1-2006}\textsl{学位论文编写规则}
-% \item \std{GB/T 7713.3-2009}\textsl{科技报告编写规则}
-% \item \std{GB/T 7713-1987}\textsl{科学技术报告、学位论文和学术论文的编写格式},
-% 该标准已被\std{GB/T 7713.1-2006}和\std{GB/T 7713.3-2009}部分替代
-% \item \std{GB/T 7156-2003}\textsl{文献保密等级代码与标识}
-% \item \std{GB/T 16159-2012}\textsl{汉语拼音正词法基本规则}，
-% 该标准取代了\std{GB/T 16159-1996}
-% \item \std{CY/T 35-2001}\textsl{科技文献的章节编号方法}
+% \item \href{https://github.com/Haixing-Hu/typesetting-standard/raw/master/%E5%9B%BE%E4%B9%A6%E3%80%81%E6%9C%9F%E5%88%8A%E3%80%81%E8%AE%BA%E6%96%87%E7%9A%84%E7%BC%96%E6%8E%92/%E3%80%90GB:T%207714-2005%E3%80%91%E6%96%87%E5%90%8E%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE%E8%91%97%E5%BD%95%E8%A7%84%E5%88%99.pdf}%
+% {\std{GB/T 7714-2005}\textsl{文后参考文献著录规则}}
+% \item \href{https://github.com/Haixing-Hu/typesetting-standard/raw/master/%E5%9B%BE%E4%B9%A6%E3%80%81%E6%9C%9F%E5%88%8A%E3%80%81%E8%AE%BA%E6%96%87%E7%9A%84%E7%BC%96%E6%8E%92/%E3%80%90GB:T%207713.1-2006%E3%80%91%E5%AD%A6%E4%BD%8D%E8%AE%BA%E6%96%87%E7%BC%96%E5%86%99%E8%A7%84%E5%88%99.pdf}%
+% {\std{GB/T 7713.1-2006}\textsl{学位论文编写规则}}%
+% \item \href{https://github.com/Haixing-Hu/typesetting-standard/raw/master/%E5%9B%BE%E4%B9%A6%E3%80%81%E6%9C%9F%E5%88%8A%E3%80%81%E8%AE%BA%E6%96%87%E7%9A%84%E7%BC%96%E6%8E%92/%E3%80%90GB:T%207713.3-2009%E3%80%91%E7%A7%91%E6%8A%80%E6%8A%A5%E5%91%8A%E7%BC%96%E5%86%99%E8%A7%84%E5%88%99.pdf}%
+% {\std{GB/T 7713.3-2009}\textsl{科技报告编写规则}}
+% \item \href{https://github.com/Haixing-Hu/typesetting-standard/raw/master/%E5%9B%BE%E4%B9%A6%E3%80%81%E6%9C%9F%E5%88%8A%E3%80%81%E8%AE%BA%E6%96%87%E7%9A%84%E7%BC%96%E6%8E%92/%E3%80%90GB:T%207713-1987%E3%80%91%E7%A7%91%E5%AD%A6%E6%8A%80%E6%9C%AF%E6%8A%A5%E5%91%8A%E3%80%81%E5%AD%A6%E4%BD%8D%E8%AE%BA%E6%96%87%E5%92%8C%E5%AD%A6%E6%9C%AF%E8%AE%BA%E6%96%87%E7%9A%84%E7%BC%96%E5%86%99%E6%A0%BC%E5%BC%8F.pdf}%
+% {\std{GB/T 7713-1987}\textsl{科学技术报告、学位论文和学术论文的编写格式}},
+% 该标准已被%
+% \href{https://github.com/Haixing-Hu/typesetting-standard/raw/master/%E5%9B%BE%E4%B9%A6%E3%80%81%E6%9C%9F%E5%88%8A%E3%80%81%E8%AE%BA%E6%96%87%E7%9A%84%E7%BC%96%E6%8E%92/%E3%80%90GB:T%207713.1-2006%E3%80%91%E5%AD%A6%E4%BD%8D%E8%AE%BA%E6%96%87%E7%BC%96%E5%86%99%E8%A7%84%E5%88%99.pdf}%
+% {\std{GB/T 7713.1-2006}}和%
+% \href{https://github.com/Haixing-Hu/typesetting-standard/raw/master/%E5%9B%BE%E4%B9%A6%E3%80%81%E6%9C%9F%E5%88%8A%E3%80%81%E8%AE%BA%E6%96%87%E7%9A%84%E7%BC%96%E6%8E%92/%E3%80%90GB:T%207713.3-2009%E3%80%91%E7%A7%91%E6%8A%80%E6%8A%A5%E5%91%8A%E7%BC%96%E5%86%99%E8%A7%84%E5%88%99.pdf}%
+% {\std{GB/T 7713.3-2009}}部分替代
+% \item \href{https://github.com/Haixing-Hu/typesetting-standard/raw/master/%E5%9B%BE%E4%B9%A6%E3%80%81%E6%9C%9F%E5%88%8A%E3%80%81%E8%AE%BA%E6%96%87%E7%9A%84%E7%BC%96%E6%8E%92/%E3%80%90GB:T%207156-2003%E3%80%91%E6%96%87%E7%8C%AE%E4%BF%9D%E5%AF%86%E7%AD%89%E7%BA%A7%E4%BB%A3%E7%A0%81%E4%B8%8E%E6%A0%87%E8%AF%86.pdf}%
+% {\std{GB/T 7156-2003}\textsl{文献保密等级代码与标识}}
+% \item \href{https://github.com/Haixing-Hu/typesetting-standard/raw/master/%E6%95%B0%E5%AD%97%E6%96%87%E5%AD%97/%E3%80%90GB:T%2016159-2012%E3%80%91%E6%B1%89%E8%AF%AD%E6%8B%BC%E9%9F%B3%E6%AD%A3%E8%AF%8D%E6%B3%95%E5%9F%BA%E6%9C%AC%E8%A7%84%E5%88%99.pdf}%
+% {\std{GB/T 16159-2012}\textsl{汉语拼音正词法基本规则}}，
+% 该标准取代了%
+% \href{https://github.com/Haixing-Hu/typesetting-standard/raw/master/%E6%95%B0%E5%AD%97%E6%96%87%E5%AD%97/%E3%80%90GB:T%2016159-1996%E3%80%91%E6%B1%89%E8%AF%AD%E6%8B%BC%E9%9F%B3%E6%AD%A3%E8%AF%8D%E6%B3%95%E5%9F%BA%E6%9C%AC%E8%A7%84%E5%88%99.pdf}%
+% {\std{GB/T 16159-1996}}
+% \item \href{https://github.com/Haixing-Hu/typesetting-standard/raw/master/%E5%9B%BE%E4%B9%A6%E3%80%81%E6%9C%9F%E5%88%8A%E3%80%81%E8%AE%BA%E6%96%87%E7%9A%84%E7%BC%96%E6%8E%92/%E3%80%90CY:T%2035-2001%E3%80%91%E7%A7%91%E6%8A%80%E6%96%87%E7%8C%AE%E7%9A%84%E7%AB%A0%E8%8A%82%E7%BC%96%E5%8F%B7%E6%96%B9%E6%B3%95.pdf}%
+% {\std{CY/T 35-2001}\textsl{科技文献的章节编号方法}}
 % \end{itemize}
 %
-% 上述要求和标准的电子版可在{\njuthesis}项目主页的源码库中找到。
+% 上述要求和标准的电子版均可在对应的链接地址中找到。
 %
 % \begin{note}
 % 如南京大学研究生院对学位论文的格式要求和国家标准之间有冲突，以国家标准的要求为准。
@@ -342,7 +369,7 @@
 %     |amsthm|   & |amssymb|    & |bm|        & |mathrsfs| & |txfonts|  & |pifont|  \\
 %     |setspace| & |wasysym|    & |hypernat| & |fancyhdr| & |natbib|    & |tabularx| \\
 %     |titlesec| & |glossaries|  & |ifthen|   & |makeidx| & |footmisc| &  |CJKnumb| \\
-%     |url|      &  &  &  &  & \\
+%     |url|      & |etoolbox| &  &  &  & \\
 %   \hline
 %   \end{tabular*}
 %   \caption{{\njuthesis}用到的宏包}\label{table:dependence}
@@ -463,14 +490,8 @@
 % \end{example}
 %   表\ref{table:fontnames}中列出了默认配置下使用不同字体选项时所采用的实际字体
 %   名称。系统中必须正确安装了相应的字体才能正常编译文档。\\
-%   Adobe的宋体和黑体可以在其公司网站免费下载：
-%   \begin{center}
-%   \url{http://www.adobe.com/support/downloads/detail.jsp?ftpID=4421}
-%   \end{center}
-%   楷体无免费下载，但在网上可以找到。下面的网址提供了一个打包下载的地址：
-%   \begin{center}
-%   \url{http://tinker-bot.googlecode.com/files/cfonts.tar.gz}
-%   \end{center}
+%   模板用到的字体可以在下面的代码库下载：\\
+%   \url{https://github.com/Haixing-Hu/latex-chinese-fonts}\\
 %   \begin{table}
 %     \centering\noindent
 %     \begin{tabular}[t]{ccccc}
@@ -480,7 +501,10 @@
 %     \textbf{宋体} & {Adobe Song Std}  & {SimSun} & {AR PL SungtiL GB} &  {STSong} \\
 %     \textbf{黑体} & {Adobe Heiti Std} & {SimHei} & {WenQuanYi Zen Hei Mono} &  {STHeiti} \\
 %     \textbf{楷书} & {Adobe Kaiti Std} & {KaiTi}  & {AR PL KaitiM GB} & {STKaiti} \\
-%     \textbf{仿宋体} & {Adobe Fangsong Std} & {FangSong} & {STFangSong} & {STFangSong} \\
+%     \textbf{仿宋体} & {Adobe Fangsong Std} & {FangSong} & {STFangsong} & {STFangsong} \\
+%     \textbf{英文衬线字体(Serif)} & {Times} & {Times New Roman} & {Times} & {Times} \\
+%     \textbf{英文非衬线字体(Sans Serif)} & {Helvetica} & {Arial} & {Helvetica} & {Helvetica} \\
+%     \textbf{英文等宽字体(Monospace)} & {Courier} & {Courier New} & {Courier} & {Courier} \\
 %     \bottomrule
 %     \end{tabular}
 %     \caption{默认配置下不同字体选项所使用的实际字体名称}
@@ -717,10 +741,25 @@
 %
 % \myentry{论文标题}
 % \DescribeMacro{\title}
-% 命令\cs{title}用于设置论文的中文标题。此属性必须被设置。
+% 命令\cs{title}用于设置论文的中文标题。
 %
 % \begin{example}
 % \title{基于小世界理论的数据中心网络模型}
+% \end{example}
+%
+% \begin{note}
+% \cs{title}的参数中不可换行，也不能使用\cs{thanks}脚注。
+% \end{note}
+%
+% \myentry{论文标题分行}
+% \DescribeMacro{\titlea}
+% \DescribeMacro{\titleb}
+% 命令\cs{titlea}和\cs{titleb}用于在论文标题很长时，设置分行的论文中文标题。
+% 其中\cs{titlea}设置论文标题的第一行，\cs{titleb}设置论文标题的第二行。
+%
+% \begin{example}
+% \titlea{半轻衰变$D^+\to \omega(\phi)e^+\nu_e$的研究}
+% \titleb{和弱衰变$J/\psi \to D_s^{(*)-}e^+\nu_e$的寻找}
 % \end{example}
 %
 % \begin{note}
@@ -1472,8 +1511,6 @@
 \RequirePackage{CJKnumb}
 %    \end{macrocode}
 %
-%
-%
 % 让{\XeLaTeX}能够处理dash的惯例(使用"--"和"---"获得较长的dash)。
 %    \begin{macrocode}
 \defaultfontfeatures{Mapping=tex-text}
@@ -1484,14 +1521,14 @@
 \punctstyle{plain}
 %    \end{macrocode}
 %
-% |CJKfntef|宏包提供了中文下划线命令\cs{CJKunderline}，它将在制作论文封面时用到。
+% |xeCJKfntef|宏包提供了中文下划线命令\cs{CJKunderline}，它将在制作论文封面时用到。
 %    \begin{macrocode}
-\RequirePackage{CJKfntef}
+\RequirePackage{xeCJKfntef}
 %    \end{macrocode}
 %
 % 设置中文下划线颜色为黑色。
 %    \begin{macrocode}
-\renewcommand*{\CJKunderlinecolor}{\color{black}}
+\xeCJKsetup{ underline/format = \color{black} }
 %    \end{macrocode}
 %
 % 使用|indentfirst|宏包支持首行缩进。
@@ -1571,6 +1608,11 @@
 %</cls>
 %    \end{macrocode}
 %
+% |etoolbox|宏包提供了一些工具宏。
+%    \begin{macrocode}
+\RequirePackage{etoolbox}
+%    \end{macrocode}
+%
 % \subsection{字符串常量定义}
 %
 % 定义论文中各章节的中文标题名称字符串常量：
@@ -1647,6 +1689,9 @@
 \newcommand*{\njut@cap@phd}{博士}
 \newcommand*{\njut@cap@master}{硕士}
 \newcommand*{\njut@cap@bachelor}{学士}
+\newcommand*{\njut@cap@type@phd}{研究生}
+\newcommand*{\njut@cap@type@master}{研究生}
+\newcommand*{\njut@cap@type@bachelor}{本科生}
 \newcommand*{\njut@cap@en@phd}{Doctor of Philosophy}
 \newcommand*{\njut@cap@en@master}{Master}
 \newcommand*{\njut@cap@en@bachelor}{Bachelor}
@@ -1687,7 +1732,7 @@
 % 定义南京大学学位论文中文封面的字符串常量：
 %    \begin{macrocode}
 \newcommand*{\njut@cap@cover}{中文封面}
-\newcommand*{\njut@cap@cover@thesis}{研究生毕业论文}
+\newcommand*{\njut@cap@cover@thesis}{{\njut@value@type}毕业论文}
 \newcommand*{\njut@cap@cover@apply}{申请{\njut@value@degree}学位}
 \newcommand*{\njut@cap@cover@title}{论文题目}
 \newcommand*{\njut@cap@cover@author}{作者姓名}
@@ -1725,7 +1770,7 @@ in\\
 %    \begin{macrocode}
 \newcommand*{\njut@cap@abstract}{中文摘要}
 \newcommand*{\njut@cap@abstract@chaptername}%
-            {南京大学研究生毕业论文中文摘要首页用纸}
+            {南京大学{\njut@value@type}毕业论文中文摘要首页用纸}
 \newcommand*{\njut@cap@abstract@title}{毕业论文题目}
 \newcommand*{\njut@cap@abstract@major}{专业}
 \newcommand*{\njut@cap@abstract@author}{级{\njut@value@degree}生姓名}
@@ -1738,11 +1783,10 @@ in\\
 %    \begin{macrocode}
 \newcommand*{\njut@cap@abstract@en}{英文摘要}
 \newcommand*{\njut@cap@abstract@en@chaptername}%
-            {南京大学研究生毕业论文英文摘要首页用纸}
+            {南京大学{\njut@value@type}毕业论文英文摘要首页用纸}
 \newcommand*{\njut@cap@abstract@en@title}{THESIS}
 \newcommand*{\njut@cap@abstract@en@major}{SPECIALIZATION}
-%\newcommand*{\njut@cap@abstract@en@author}{POSTGRADUATE}
-\newcommand*{\njut@cap@abstract@en@author}{UNDERGRADUATE}
+\newcommand*{\njut@cap@abstract@en@author}{POSTGRADUATE}
 \newcommand*{\njut@cap@abstract@en@supervisor}{MENTOR}
 \newcommand*{\njut@cap@abstract@en@abstractname}{Abstract}
 \newcommand*{\njut@cap@abstract@en@keywordsname}{keywords}
@@ -1777,7 +1821,7 @@ in\\
 \newcommand*{\njut@cap@license@public}{不保密}
 \newcommand*{\njut@cap@license@secret}{保密，保密期：}
 \newcommand*{\njut@cap@license@title}{论文题名}
-\newcommand*{\njut@cap@license@studentnum}{研究生学号}
+\newcommand*{\njut@cap@license@studentnum}{{\njut@value@type}学号}
 \newcommand*{\njut@cap@license@department}{所在院系}
 \newcommand*{\njut@cap@license@grade}{学位年度}
 \newcommand*{\njut@cap@license@category}{论文级别}
@@ -1825,18 +1869,23 @@ in\\
 %    \begin{macrocode}
 \ifnjut@phd
     \newcommand*{\njut@value@degree}{\njut@cap@phd}
+    \newcommand*{\njut@value@type}{\njut@cap@type@phd}
 \else
     \ifnjut@master
         \newcommand*{\njut@value@degree}{\njut@cap@master}
+        \newcommand*{\njut@value@type}{\njut@cap@type@master}
     \else
        \ifnjut@bachelor
           \newcommand*{\njut@value@degree}{\njut@cap@bachelor}
+          \newcommand*{\njut@value@type}{\njut@cap@type@bachelor}
        \else
           \ClassError{njuthesis}{No degree was selected.}{}
        \fi
     \fi
 \fi
 \newcommand*{\njut@value@title}{(论文标题)}
+\newcommand*{\njut@value@titlea}{(论文长标题第一行)}
+\newcommand*{\njut@value@titleb}{(论文长标题第二行)}
 \newcommand*{\njut@value@author}{(作者姓名)}
 \newcommand*{\njut@value@telphone}{(作者电话号码)}
 \newcommand*{\njut@value@email}{(作者电子邮件)}
@@ -1956,16 +2005,17 @@ December\fi
 \newcommand*{\njut@enfn@mono@mac}{Courier}
 %    \end{macrocode}
 %
-% 定义Adoble提供的宋体、黑体、楷书和仿宋体四种中文字体的名称。Adoble的宋体、黑体和
-% 仿宋体可以在其网站免费下载，地址为
+% 定义Adoble提供的宋体、黑体、楷书和仿宋体四种中文字体的名称。Adoble的宋体、黑体和仿宋体
+% 可以在其网站免费下载，地址为
 % \begin{center}
-%  \url{http://www.adobe.com/support/downloads/detail.jsp?ftpID=4421}
+%   \url{https://supportdownloads.adobe.com/detail.jsp?ftpID=4883}
 % \end{center}
 % 但Adobe的楷体只随Adobe Creative Suite软件提供。不过，所有Adobe中文字体都可以在这里
-% 打包下载：
+% 下载：
 % \begin{center}
-% \url{http://tinker-bot.googlecode.com/files/cfonts.tar.gz}
+%   \url{https://github.com/Haixing-Hu/latex-chinese-fonts}
 % \end{center}
+%
 %    \begin{macrocode}
 \newcommand*{\njut@zhfn@songti@adobe}{Adobe Song Std}
 \newcommand*{\njut@zhfn@heiti@adobe}{Adobe Heiti Std}
@@ -2552,13 +2602,13 @@ December\fi
 %
 % 修改|tabular|环境，设置表格中的行间距为正文行间距。
 %    \begin{macrocode}
-\let\convertergy@oldtabular\tabular
-\let\convertergy@endoldtabular\endtabular
+\let\njut@oldtabular\tabular
+\let\njut@endoldtabular\endtabular
 \renewenvironment{tabular}%
 {\bgroup%
 \renewcommand{\arraystretch}{1.38}%
-\convertergy@oldtabular}%
-{\convertergy@endoldtabular\egroup}
+\njut@oldtabular}%
+{\njut@endoldtabular\egroup}
 %    \end{macrocode}
 %
 % 文章用A4纸标准大小的白纸打印，页眉：2.6cm，页脚：2.4cm，页边距上下：3.5cm，左
@@ -2988,6 +3038,10 @@ December\fi
 %    \begin{macrocode}
 \renewcommand*{\title}[1]{%
   \renewcommand{\njut@value@title}{#1}}
+\newcommand*{\titlea}[1]{%
+  \renewcommand{\njut@value@titlea}{#1}}
+\newcommand*{\titleb}[1]{%
+  \renewcommand{\njut@value@titleb}{#1}}
 \renewcommand*{\author}[1]{%
   \renewcommand{\njut@value@author}{#1}}
 \newcommand*{\telphone}[1]{%
@@ -3113,6 +3167,36 @@ December\fi
 % 重新定义{\LaTeX}提供的\cs{maketitle}命令，使其生成南京大学学术论文所需的中文封面。
 % 注意我们使用了前面修改过的\cs{cleardoublepage}命令来插入无页眉页脚的空白页。
 %    \begin{macrocode}
+\newcommand*{\njut@covertable@onelinetitle}{
+  \begin{tabular}{p{7.3em}c}
+      \makebox[7em][s]{\njut@cap@cover@title}
+      & \njutunderline[310pt]{\njut@value@title}\\
+      \makebox[7em][s]{\njut@cap@cover@author}
+      & \njutunderline[310pt]{\njut@value@author}\\
+      \makebox[7em][s]{\njut@cap@cover@major}
+      & \njutunderline[310pt]{\njut@value@major}\\
+      \makebox[7em][s]{\njut@cap@cover@researchfield}
+      & \njutunderline[310pt]{\njut@value@researchfield}\\
+      \makebox[7em][s]{\njut@cap@cover@supervisor}
+      & \njutunderline[310pt]{\njut@value@supervisor}\\
+  \end{tabular}
+}
+\newcommand*{\njut@covertable@twolinetitle}{
+  \begin{tabular}{p{7.3em}c}
+      \makebox[7em][s]{\njut@cap@cover@title}
+      & \njutunderline[310pt]{\njut@value@titlea}\\
+      \makebox[7em][s]{}
+      & \njutunderline[310pt]{\njut@value@titleb}\\
+      \makebox[7em][s]{\njut@cap@cover@author}
+      & \njutunderline[310pt]{\njut@value@author}\\
+      \makebox[7em][s]{\njut@cap@cover@major}
+      & \njutunderline[310pt]{\njut@value@major}\\
+      \makebox[7em][s]{\njut@cap@cover@researchfield}
+      & \njutunderline[310pt]{\njut@value@researchfield}\\
+      \makebox[7em][s]{\njut@cap@cover@supervisor}
+      & \njutunderline[310pt]{\njut@value@supervisor}\\
+  \end{tabular}
+}
 \renewcommand*{\maketitle}{%
   \thispagestyle{empty}
   \pdfbookmark[0]{\njut@cap@cover}{cover}
@@ -3129,18 +3213,8 @@ December\fi
     \bf\kaishu\zihao{3}
     \def\tabcolsep{1pt}
     \def\arraystretch{1.5}
-    \begin{tabular}{p{7.3em}c}
-      \makebox[7em][s]{\njut@cap@cover@title}
-      & \njutunderline[310pt]{\njut@value@title}\\
-      \makebox[7em][s]{\njut@cap@cover@author}
-      & \njutunderline[310pt]{\njut@value@author}\\
-      \makebox[7em][s]{\njut@cap@cover@major}
-      & \njutunderline[310pt]{\njut@value@major}\\
-      \makebox[7em][s]{\njut@cap@cover@supervisor}
-      & \njutunderline[310pt]{\njut@value@supervisor}\\
-      \makebox[7em][s]{\njut@cap@cover@researchfield}
-      & \njutunderline[310pt]{\njut@value@researchfield}\\
-    \end{tabular}\egroup}\\
+    \ifdefempty{\njut@cap@cover@title}{\njut@covertable@onelinetitle}{\njut@covertable@twolinetitle}
+    \egroup}\\
     \vskip \stretch{1}
     {\bf\kaishu\zihao{4}\njut@value@date}
   \end{center}
@@ -3329,7 +3403,7 @@ December\fi
 % \subsection{前言章节}
 %
 % \begin{environment}{preface}
-% 该环境用于``致谢''页。
+% 该环境用于``前言''页。
 %    \begin{macrocode}
 \newenvironment{preface}{%
   \nchapter{\njut@cap@preface}
@@ -3659,7 +3733,7 @@ December\fi
 \RequirePackage[CJKnumber,CJKchecksingle]{xeCJK}
 \RequirePackage[hyphens]{url} % must be load before hypdoc package
 \RequirePackage{hypdoc} % it will load hyperref package
-\RequirePackage{dtklogos}
+\RequirePackage[normalem]{ulem}
 \hypersetup{%
     unicode=false,
     hyperfootnotes=true,
@@ -3677,6 +3751,9 @@ December\fi
 }
 
 \newcommand{\env}[1]{\texttt{#1}}
+
+% 设置超链接为蓝色
+\hypersetup{colorlinks=true,urlcolor=blue}
 
 % 定义英文字体名称。
 \newcommand*{\njut@enfn@main}{Times New Roman}

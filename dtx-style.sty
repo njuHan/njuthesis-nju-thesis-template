@@ -7,7 +7,7 @@
 %% njuthesis.dtx  (with options: `dtx-style')
 %% This is a generated file.
 %% 
-%% Copyright (C) 2013-2015, Haixing Hu.
+%% Copyright (C) 2013-2017, Haixing Hu.
 %% Department of Computer Science and Technology, Nanjing University.
 %% 
 %% Home Page of the Project: http://haixing-hu.github.io/nju-thesis/
@@ -22,6 +22,7 @@
 %% 1999/12/01 or later.
 %% 
 %% This is the manual-style file of the njuthesis package with XeLaTeX.
+\RequirePackage{etoolbox}
 \ProvidesPackage{dtx-style}
 \RequirePackage{amssymb}
 \RequirePackage{calc}
@@ -43,7 +44,7 @@
 \RequirePackage[CJKnumber,CJKchecksingle]{xeCJK}
 \RequirePackage[hyphens]{url} % must be load before hypdoc package
 \RequirePackage{hypdoc} % it will load hyperref package
-\RequirePackage{dtklogos}
+\RequirePackage[normalem]{ulem}
 \hypersetup{%
     unicode=false,
     hyperfootnotes=true,
@@ -61,6 +62,8 @@
 }
 
 \newcommand{\env}[1]{\texttt{#1}}
+
+\hypersetup{colorlinks=true,urlcolor=blue}
 
 \newcommand*{\njut@enfn@main}{Times New Roman}
 \newcommand*{\njut@enfn@sans}{Arial}
