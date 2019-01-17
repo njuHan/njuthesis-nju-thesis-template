@@ -712,6 +712,10 @@
   \renewcommand{\njut@value@nlc@date}{#1}}
 \renewcommand*{\title}[1]{%
   \renewcommand{\njut@value@title}{#1}}
+\newcommand*{\titlea}[1]{%
+  \renewcommand{\njut@value@titlea}{#1}}
+\newcommand*{\titleb}[1]{%
+  \renewcommand{\njut@value@titleb}{#1}}
 \renewcommand*{\author}[1]{%
   \renewcommand{\njut@value@author}{#1}}
 \newcommand*{\telphone}[1]{%
@@ -742,10 +746,6 @@
   \renewcommand{\njut@value@date}{#1}}
 \newcommand*{\englishtitle}[1]{%
   \renewcommand{\njut@value@en@title}{#1}}
-\newcommand*{\titlea}[1]{%
-  \renewcommand{\njut@value@titlea}{#1}}
-\newcommand*{\titleb}[1]{%
-  \renewcommand{\njut@value@titleb}{#1}}
 \newcommand*{\englishauthor}[1]{%
   \renewcommand{\njut@value@en@author}{#1}}
 \newcommand{\englishsupervisor}[1]{%
@@ -862,7 +862,7 @@
     \bf\kaishu\zihao{3}
     \def\tabcolsep{1pt}
     \def\arraystretch{1.5}
-    \ifdefempty{\njut@cap@cover@title}{\njut@covertable@onelinetitle}{\njut@covertable@twolinetitle}
+    \ifdefempty{\njut@value@title}{\njut@covertable@twolinetitle}{\njut@covertable@onelinetitle}
     \egroup}\\
     \vskip \stretch{1}
     {\bf\kaishu\zihao{4}\njut@value@date}
