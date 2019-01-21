@@ -934,7 +934,7 @@
   \noindent\njut@cap@abstract@supervisor{：}%
   \njutunderline[248pt]{\njut@value@supervisor}\\
   }
-  \vspace{5mm}
+  \vspace{-5mm}
   \begin{center}
     {\heiti\zihao{-3}\njut@cap@abstract@abstractname}
   \end{center}%
@@ -972,7 +972,7 @@
    \njut@cap@abstract@en@supervisor{:}~%
    \njutunderline[348pt]{\njut@value@en@supervisor}\\
   }
-  \vspace{5mm}
+  \vspace{-5mm}
   \begin{center}
     {\bf\zihao{-3}\njut@cap@abstract@en@abstractname}
   \end{center}%
