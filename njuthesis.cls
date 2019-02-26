@@ -72,7 +72,8 @@
 \DeclareGraphicsExtensions{.pdf,.eps,.jpg,.png}
 \RequirePackage{caption}
 \RequirePackage{float}
-\RequirePackage{subfig}
+%% \RequirePackage{subfig} %% 有bug暂时用不了subfig, 用subcaption代替
+\RequirePackage{subcaption}
 \RequirePackage{array}
 \RequirePackage{longtable}
 \RequirePackage{booktabs}

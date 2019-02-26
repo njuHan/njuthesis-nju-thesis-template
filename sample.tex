@@ -41,6 +41,8 @@
   title=\lstname
 }
 
+% set up labelformat and labelsep for subfigure 详见： http://www.latexstudio.net/archives/8652.html
+\captionsetup[subfigure]{labelformat=simple, labelsep=colon}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 设置《国家图书馆封面》的内容，仅博士论文才需要填写
@@ -288,28 +290,40 @@
 
 
 \chapter{实验验证}
-\lipsum[2]
 
-实验硬件设备如图(\ref{img:1})所示。
+实验硬件设备如图\ref{img:1}所示。
 \begin{figure}[htbp]
 \begin{minipage}[t]{0.5\textwidth}
 \centering
-\includegraphics[width=0.9\textwidth]{./figure/github.jpg}
+\includegraphics[width=0.8\textwidth]{./figure/github.jpg}
 \caption{实验硬件设备总览}
 \label{img:1}
 \end{minipage}
 \begin{minipage}[t]{0.5\textwidth}
 \centering
-\includegraphics[width=0.9\textwidth]{./figure/github.jpg}
+\includegraphics[width=0.8\textwidth]{./figure/github.jpg}
 \caption{实验测量示意图}
 \label{img:2}
 \end{minipage}
 \end{figure}
 
-
-
-
-
+图\ref{fig:sub}所示子图\ref{subfig:a}和子图\ref{subfig:b}。
+\begin{figure}[H]
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=0.8\textwidth]{./figure/github.jpg}
+		\caption{子图}
+		\label{subfig:a}
+	\end{subfigure}
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=0.8\textwidth]{./figure/github.jpg}
+		\caption{子图}
+		\label{subfig:b}
+	\end{subfigure}
+\caption{子图样例}
+\label{fig:sub}
+\end{figure}
 
 \chapter{总结与展望}
 \lipsum[1]
