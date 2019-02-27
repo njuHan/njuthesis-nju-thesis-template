@@ -1,28 +1,4 @@
-%%
-%% This is file `njuthesis.cls',
-%% generated with the docstrip utility.
-%%
-%% The original source files were:
-%%
-%% njuthesis.dtx  (with options: `cls')
-%% This is a generated file.
-%% 
-%% Copyright (C) 2013-2015, Haixing Hu.
-%% Department of Computer Science and Technology, Nanjing University.
-%% 
-%% Home Page of the Project: http://haixing-hu.github.io/nju-thesis/
-%% 
-%% It may be distributed and/or modified under the conditions of the LaTeX Project
-%% Public License, either version 1.2 of this license or (at your option) any
-%% later version.  The latest version of this license is in
-%% 
-%%    http://www.latex-project.org/lppl.txt
-%% 
-%% and version 1.2 or later is part of all distributions of LaTeX version
-%% 1999/12/01 or later.
-%% 
-%% To produce the documentation run the original source files ending with `.dtx'
-%% through LaTeX.
+%% 模板类文件
 \NeedsTeXFormat{LaTeX2e}[1995/12/01]
 \ProvidesClass{njuthesis.cls}
  [2015/7/16 v1.1.18 Document Class for the Degree Papers of Nanjing University]
