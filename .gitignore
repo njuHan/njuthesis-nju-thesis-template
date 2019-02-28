@@ -34,3 +34,4 @@
 *.tdo
 *.thm
 .DS_Store
+*.bak
