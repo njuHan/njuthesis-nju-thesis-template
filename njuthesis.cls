@@ -510,9 +510,13 @@
   labelsep=0.5em,           % 包含标签的盒子与列表项的第一行文本之间的间隔
   labelwidth=2em,           % 包含标签的盒子的正常宽度；若实际宽度更宽，则使用实际宽度。
 }
-\setlist[itemize,1]{label=$\medbullet$}
-\setlist[itemize,2]{label=$\blacksquare$}
-\setlist[itemize,3]{label=$\Diamondblack$}
+%\setlist[itemize,1]{label=$\medbullet$}
+%\setlist[itemize,2]{label=$\blacksquare$}
+%\setlist[itemize,3]{label=$\Diamondblack$}
+%较小的一级 item 点
+\setlist[itemize,1]{label=$\vcenter{\hbox{\large$\bullet$}}$} 
+\setlist[itemize,2]{label=$\vcenter{\hbox{\small$\blacksquare$}}$} 
+\setlist[itemize,3]{label=$\vcenter{\hbox{\small$\Diamondblack$}}$} 
 \renewenvironment{quote}%
                  {\list{}{\leftmargin=4em\rightmargin=4em}\item[]}%
                  {\endlist}
