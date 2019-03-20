@@ -379,7 +379,14 @@
   \item[\hskip\labelsep\textbf{#1}\@addpunct{:}]\ignorespaces
 }{\endtrivlist\@endpefalse}
 
-\newtheorem{algorithm}{\njut@cap@algorithm}[chapter]
+\newtheorem{algorithm}{\njut@cap@algorithm}[chapter] %算法标号使用章节号，否则注释该行即可
+%algorithm seudocode
+\RequirePackage{algorithm}
+\RequirePackage{algorithmic}
+\renewcommand{\algorithmicrequire}{ \textbf{输入:}}
+\renewcommand{\algorithmicensure}{ \textbf{输出:}}
+\floatname{algorithm}{算法}
+
 \renewcommand*{\thedefinition}{\dashnumber{\thechapter}{\arabic{definition}}}
 \renewcommand*{\thetheorem}{\dashnumber{\thechapter}{\arabic{theorem}}}
 \renewcommand*{\theaxiom}{\dashnumber{\thechapter}{\arabic{axiom}}}
