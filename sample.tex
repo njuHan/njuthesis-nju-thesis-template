@@ -11,9 +11,7 @@
 %%   nobackinfo 取消封二页导师签名信息。注意，按照南大的规定，是需要签名页的。
 %%   phd/master/bachelor 选择博士/硕士/学士论文
 
-\usepackage{lipsum}
-\usepackage{listings}
-\usepackage{xcolor}
+%代码listings设置
 \lstset{breaklines}%这条命令可以让LaTeX自动将长的代码行换行排版
 \lstset{extendedchars=false}%这一条命令可以解决代码跨页时，章节标题，页眉等汉字不显示的问题
 \lstset{                        %Settings for listings package.
@@ -294,7 +292,7 @@
   \caption{算法名字}
   \label{alg:alg1}
   \begin{algorithmic}[1]
-        \REQUIRE 这是输入      
+        \REQUIRE 这是输入
         \ENSURE 这是输出
         \WHILE {flag}
 		      \STATE 这是语句
@@ -364,30 +362,12 @@
 
 % 附录，必须放在参考文献后，backmatter前
 \appendix
-\chapter{MPTCP内核源代码修改}\label{app:1}
-\section{函数mptcp\_v4\_subflows()}
+\chapter{附录代码}\label{app:1}
+\section{main函数}
 \begin{lstlisting}[language=C]
-static void mptcp_v4_subflows(struct sock *meta_sk, const struct mptcp_loc4 *loc, struct mptcp_rem4 *rem)
+int main()
 {
-   int i;
-   int num;
-   printk(KERN_INFO "******** Entering mptcp_v4_subflows ********\n");
-
-   initial_my_global_var();
-   switch(my_counter)
-   {
-		case 1 : num = Fir; break;
-		case 2 : num = Sec; break;
-		case 3 : num = Thi; break;
-		default : num = Fir;
-	}
-
-	for (i = 1; i < num; i++)
-	{
-		printk(KERN_INFO "******** in mptcp_v4_subflows i = %d num = %d********\n",i,num);
-		mptcp_init4_subsockets(meta_sk, loc, rem);
-	}
-	printk(KERN_INFO "******** Leaving mptcp_v4_subflows ********\n");
+	return 0;
 }
 \end{lstlisting}
 

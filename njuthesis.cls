@@ -56,6 +56,10 @@
 \RequirePackage{multirow}
 \RequirePackage{enumitem}
 \RequirePackage{xcolor}
+\RequirePackage{lipsum}
+\RequirePackage{listings}
+\RequirePackage{titlesec}
+\RequirePackage{titletoc}
 \RequirePackage{amsmath}
 \RequirePackage{amsthm}
 \RequirePackage{amsfonts}
