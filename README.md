@@ -6,7 +6,8 @@
 * 默认Windows系统下，**安装[ctex](http://www.ctex.org/CTeXDownload/)完整版**。Mac,Linux操作系统需按照sample.tex中的注释说明，修改字体等参数。已给出样例sample.tex，编辑修改该文件即可。
 * **必须使用XeLaTeX**。建议使用TeXworks编辑，选择**XeLaTeX+MakeIndex+BibTex**编译运行。WinEdt需要使用**UTF-8**编码打开.tex文件，并且使用XeLaTeX编译。
 * 切换本科生、研究生、博士生论文模版，需修改.tex文件中\documentclass[参数]
-* 使用bibtex文献管理，用编辑器编辑sample.bib文件即可。或使用[JabRef](http://www.jabref.org/)打开。
+* 参数twoside/oneside指定排版的文档为双面/单面格式，如果论文双面打印，则建议用twoside（twoside会使得chapter章节从奇数页开始，即纸张的正面开始）。
+* 使用bibtex文献管理，用编辑器编辑sample.bib文件即可。或使用[JabRef](http://www.jabref.org/)打开
 
 ## 文件说明:
 |文件(夹)|说明|
