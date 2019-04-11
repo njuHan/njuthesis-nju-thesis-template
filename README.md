@@ -20,3 +20,7 @@
 |njuname.eps | 南京大学校名图片|
 |gbt7714-2005.bst | 符合国标GB/T 7714-2005 的参考文献样式文件|
 |figures/ | 示例文档图片目录|
+
+## 参考文献格式说明
+严格遵循中国国家标准《GB/T 7714-2005: 文后参考文献著录规则》  
+详细信息见该项目：[GBT7714-2005-BibTeX-Style](https://github.com/Haixing-Hu/GBT7714-2005-BibTeX-Style)
