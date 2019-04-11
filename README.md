@@ -22,5 +22,7 @@
 |figures/ | 示例文档图片目录|
 
 ## 参考文献格式说明
-严格遵循中国国家标准《GB/T 7714-2005: 文后参考文献著录规则》  
+严格遵循中国国家标准[《GB/T 7714-2005: 文后参考文献著录规则》][gbt7714-2005]   
 详细信息见该项目：[GBT7714-2005-BibTeX-Style](https://github.com/Haixing-Hu/GBT7714-2005-BibTeX-Style)
+
+[gbt7714-2005]: https://github.com/njuHan/njuthesis-nju-thesis-template/blob/master/%E3%80%90GB_T%207714-2005%E3%80%91%E6%96%87%E5%90%8E%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE%E8%91%97%E5%BD%95%E8%A7%84%E5%88%99.pdf
