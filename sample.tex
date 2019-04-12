@@ -57,7 +57,7 @@
 % - \clasifiedlevel，表示机密级：此级别的文献内容涉及重要的国家秘密 。
 % - \mostconfidentiallevel，表示绝密级：此级别的文献内容涉及最重要的国家秘密。
 % 此属性可选，默认为\openlevel，即公开级。
-\securitylevel{\controllevel}
+\securitylevel{\openlevel}
 % 设置论文按照《国际十进分类法UDC》的分类编号
 % 该编号可在下述网址查询：http://www.udcc.org/udcsummary/php/index.php?lang=chi
 \udc{004.72}
@@ -409,7 +409,8 @@ int main()
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 生成《学位论文出版授权书》页面，应放在最后一页
-%\makelicense
+\makelicense
+% 该页的论文涉密情况的设置依据\securitylevel{}参数，具体请看模板正文前的参数设置和注释说明
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{document}
