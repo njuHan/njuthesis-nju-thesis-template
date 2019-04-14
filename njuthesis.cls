@@ -1099,6 +1099,21 @@
   \normalfont
   \cleardoublepage
 }
+%% 盲审命令，空白字段设置
+\newcommand*{\blind}
+{
+\author{}
+\telphone{}
+\email{}
+\studentnum{}
+\supervisor{}
+\supervisortelphone{}
+\major{}
+\researchfield{}
+\englishauthor{}
+\englishsupervisor{}
+\englishmajor{}
+}
 \newcommand{\njuthesis}{\texttt{NJU-Thesis}}
 \newcommand{\zhdash}{\kern0.3ex\rule[0.8ex]{2em}{0.1ex}\kern0.3ex}
 \newcommand{\cell}[3]{\parbox[c][#2][c]{#1}{\makebox[#1]{#3}}}
