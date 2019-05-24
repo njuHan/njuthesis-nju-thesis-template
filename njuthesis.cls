@@ -78,6 +78,7 @@
 \defaultfontfeatures{Mapping=tex-text}
 \punctstyle{plain}
 \RequirePackage{CJKfntef}
+\RequirePackage{ulem}
 \renewcommand*{\CJKunderlinecolor}{\color{black}}
 \RequirePackage[hyphens]{url}
 \RequirePackage{hyperref}
@@ -911,7 +912,8 @@
   \pdfbookmark[0]{\njut@cap@abstract}{abstract}
   \begin{center}
     {\bf\kaishu\zihao{-2}%
-     \njutunderline{\njut@cap@abstract@chaptername}}
+     %\njutunderline{\njut@cap@abstract@chaptername}}
+	 \uuline{\njut@cap@abstract@chaptername}}
   \end{center}
   \vspace{3mm}
   {\kaishu\zihao{4}%
@@ -951,7 +953,8 @@
   \pdfbookmark[0]{\njut@cap@abstract@en}{englishabstract}
   \begin{center}
     {\bf\kaishu\zihao{-2}%
-     \njutunderline{\njut@cap@abstract@en@chaptername}}
+     %\njutunderline{\njut@cap@abstract@en@chaptername}}
+	 \uuline{\njut@cap@abstract@en@chaptername}}
   \end{center}
   {\zihao{4}%
    \njut@cap@abstract@en@title{:}~%
