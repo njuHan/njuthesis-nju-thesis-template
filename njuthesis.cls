@@ -852,10 +852,10 @@
     {\bf\kaishu\zihao{1}（\makebox[7em][s]{\njut@cap@cover@apply}）}\\
     \vskip\stretch{1}
     {\bgroup
-    \bf\kaishu\zihao{3}
+    \bfseries\kaishu\zihao{3} %中文封面字号
     \def\tabcolsep{1pt}
     \def\arraystretch{1.5}
-    \ifdefempty{\njut@value@title}{\njut@covertable@twolinetitle}{\njut@covertable@onelinetitle}
+	\ifdefempty{\njut@value@title}{\njut@covertable@twolinetitle}{\njut@covertable@onelinetitle}
     \egroup}\\
     \vskip \stretch{1}
     {\bf\kaishu\zihao{4}\njut@value@date}
@@ -912,7 +912,6 @@
   \pdfbookmark[0]{\njut@cap@abstract}{abstract}
   \begin{center}
     {\bf\kaishu\zihao{-2}%
-     %\njutunderline{\njut@cap@abstract@chaptername}}
 	 \uuline{\njut@cap@abstract@chaptername}}
   \end{center}
   \vspace{3mm}
@@ -953,7 +952,6 @@
   \pdfbookmark[0]{\njut@cap@abstract@en}{englishabstract}
   \begin{center}
     {\bf\kaishu\zihao{-2}%
-     %\njutunderline{\njut@cap@abstract@en@chaptername}}
 	 \uuline{\njut@cap@abstract@en@chaptername}}
   \end{center}
   {\zihao{4}%
