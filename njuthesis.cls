@@ -73,6 +73,7 @@
 \RequirePackage{fancyhdr}
 \RequirePackage{shortvrb}
 \RequirePackage{xltxtra}
+\RequirePackage{xstring}
 \RequirePackage[CJKnumber,CJKchecksingle]{xeCJK}
 \RequirePackage{CJKnumb}
 \defaultfontfeatures{Mapping=tex-text}
@@ -593,7 +594,16 @@
       \penalty\@highpenalty
     \endgroup
   \fi}
-\renewcommand*{\tableofcontents}{%
+\titlecontents{chapter}[0pt]
+    {\addvspace{1.5pt}\filright\bfseries}
+    {
+      \IfInteger{\thecontentslabel}
+        {\contentspush{第\hspace{0.5em}\CJKnumber{\thecontentslabel}\hspace{0.5em}章\quad}}
+        {\contentspush{附录\hspace{1em}\thecontentslabel\quad}}
+    }
+    {}
+    {\titlerule*[5pt]{$\cdot$}\contentspage}
+\renewcommand*{\tableofcontents}{%    
     \if@twocolumn
       \@restonecoltrue\onecolumn
     \else
