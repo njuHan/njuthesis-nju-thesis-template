@@ -719,6 +719,8 @@
   \renewcommand{\njut@value@studentnum}{#1}}
 \newcommand*{\grade}[1]{%
   \renewcommand{\njut@value@grade}{#1}}
+\newcommand*{\graduateyear}[1]{%
+  \renewcommand{\njut@value@graduateyear}{#1}}
 \newcommand*{\supervisor}[1]{%
   \renewcommand{\njut@value@supervisor}{#1}}
 \newcommand*{\supervisortelphone}[1]{%
@@ -1037,7 +1039,7 @@
     \cell{3.52cm}{1cm}{\njut@value@department}%
   }
   & {\njut@cap@license@grade}
-  & {\njut@value@grade} \\
+  & {\njut@value@graduateyear} \\
   \hline
   \cell{2.2cm}{1.5cm}{\njut@cap@license@category}
   & \multicolumn{3}{c}{
