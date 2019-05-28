@@ -1022,15 +1022,15 @@
   \end{enumerate}
 }
 \newcommand*{\njut@cap@datefield}{%
-\njutunderline[1cm]{}{\njut@cap@year}%
+\njutunderline[1.5cm]{}{\njut@cap@year}%
 \njutunderline[1cm]{}{\njut@cap@month}%
 \njutunderline[1cm]{}{\njut@cap@day}
 }
 \newcommand*{\njut@license@makedeclaration}{%
-\par\njut@cap@license@declaration
+\par\zihao{-4}\njut@cap@license@declaration
 \vspace{5mm}
 \begin{flushright}
-  \njut@cap@license@sign\njutunderline[6cm]{}\\
+  \njut@cap@license@sign\njutunderline[3cm]{}\\
   \njut@cap@datefield\\
 \end{flushright}%
 }
@@ -1062,9 +1062,10 @@
        \njut@cap@license@categoryphd
       & {\zihao{4}$\Square$}%
        \njut@cap@license@categoryphdspec \\
+	  & 
     \end{tabular*}}
-  & \multicolumn{3}{c|}{%
-    \raisebox{-1em}{\njut@cap@license@categoryhint}}\\
+  & \multicolumn{3}{r|}{%
+    \raisebox{-2em}{\njut@cap@license@categoryhint}}\\
   \hline
   \cell{2.2cm}{1cm}{\njut@cap@license@email}
   & \multicolumn{6}{c|}{{\njut@value@email}}  \\
@@ -1078,19 +1079,19 @@
   \thispagestyle{empty}
   \nchapter{\njut@cap@license@chaptername}
   \njut@license@makedeclaration
-  \par\vspace{1em}
+  \par\vspace{2em}
   \njut@license@maketable
-  \par\vspace{1em}
+  \par\vspace{2em}
   \noindent\njut@cap@license@securitylevel\par
   \noindent{\zihao{4}$\Square$}
   {\njut@cap@license@public}\par
   \noindent{\zihao{4}$\Square$}           
   {\njut@cap@license@secret}%
-  \njut@cap@datefield\hspace{0.5em}%
+  (\njut@cap@datefield\hspace{0.5em}%
   \njut@cap@to\hspace{0.5em}%
-  \njut@cap@datefield\par
-  \vspace{1em}
-  \noindent\njut@cap@license@remark%
+  \njut@cap@datefield)\par
+  \vspace{2em}
+  \noindent\zihao{-4}\njut@cap@license@remark%
   \normalfont
   \cleardoublepage
 }
