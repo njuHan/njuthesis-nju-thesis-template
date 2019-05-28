@@ -1044,19 +1044,11 @@
   \cell{2.2cm}{1.5cm}{\njut@cap@license@category}
   & \multicolumn{3}{c}{
     \begin{tabular*}{5.6cm}{p{2.8cm}p{2.8cm}}
-       \ifnjut@master%
-           {{\zihao{-4}$\CheckedBox$}}%
-       \else%
-           {{\zihao{4}$\Square$}}%
-       \fi%
+       {{\zihao{4}$\Square$}}%
        \njut@cap@license@categorymaster
       & {\zihao{4}$\Square$}%
        \njut@cap@license@categorymasterspec \\
-       \ifnjut@phd%
-           {{\zihao{-4}$\CheckedBox$}}%
-       \else%
-           {{\zihao{4}$\Square$}}%
-       \fi%
+       {{\zihao{4}$\Square$}}%
        \njut@cap@license@categoryphd
       & {\zihao{4}$\Square$}%
        \njut@cap@license@categoryphdspec \\
@@ -1064,7 +1056,7 @@
   & \multicolumn{3}{c|}{%
     \raisebox{-1em}{\njut@cap@license@categoryhint}}\\
   \hline
-  \cell{2.2cm}{1cm}{\njut@cap@license@telphone}
+  \cell{2.2cm}{1cm}{\njut@cap@license@email}
   & \multicolumn{6}{c|}{{\njut@value@email}}  \\
   \hline
   \cell{2.2cm}{1cm}{\njut@cap@license@supervisorname}
@@ -1080,15 +1072,9 @@
   \njut@license@maketable
   \par\vspace{1em}
   \noindent\njut@cap@license@securitylevel\par
-  \noindent\ifthenelse{\equal{\njut@value@nlc@securitylevel}
-                             {\njut@cap@nlc@openlevel}}
-                      {{\zihao{-4}$\CheckedBox$}}
-                      {{\zihao{4}$\Square$}}%
+  \noindent{\zihao{4}$\Square$}
   {\njut@cap@license@public}\par
-  \noindent\ifthenelse{\equal{\njut@value@nlc@securitylevel}
-                             {\njut@cap@nlc@openlevel}}
-                      {{\zihao{4}$\Square$}}
-                      {{\zihao{-4}$\CheckedBox$}}%
+  \noindent{\zihao{4}$\Square$}           
   {\njut@cap@license@secret}%
   \njut@cap@datefield\hspace{0.5em}%
   \njut@cap@to\hspace{0.5em}%
