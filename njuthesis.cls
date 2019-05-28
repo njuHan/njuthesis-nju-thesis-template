@@ -594,16 +594,16 @@
       \penalty\@highpenalty
     \endgroup
   \fi}
-\titlecontents{chapter}[0pt]
-    {\addvspace{1.5pt}\filright\bfseries}
+ \titlecontents{chapter}[0pt]
+    {\filright\bfseries}
     {
       \IfInteger{\thecontentslabel}
-        {\contentspush{第\hspace{0.5em}\CJKnumber{\thecontentslabel}\hspace{0.5em}章\quad}}
-        {\contentspush{附录\hspace{1em}\thecontentslabel\quad}}
+	  {\hspace{-0.25em}\contentspush{第\CJKnumber{\thecontentslabel}章\ \ }}
+        {\hspace{-0.25em}\contentspush{\thecontentslabel\ \ }}
     }
     {}
     {\titlerule*[5pt]{$\cdot$}\contentspage}
-\renewcommand*{\tableofcontents}{%    
+\renewcommand*{\tableofcontents}{%
     \if@twocolumn
       \@restonecoltrue\onecolumn
     \else
