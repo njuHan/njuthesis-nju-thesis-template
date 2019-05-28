@@ -1065,14 +1065,10 @@
     \raisebox{-1em}{\njut@cap@license@categoryhint}}\\
   \hline
   \cell{2.2cm}{1cm}{\njut@cap@license@telphone}
-  & \multicolumn{2}{c|}{{\njut@value@telphone}}
-  & {\njut@cap@license@email}
-  & \multicolumn{3}{c|}{{\njut@value@email}}  \\
+  & \multicolumn{6}{c|}{{\njut@value@email}}  \\
   \hline
   \cell{2.2cm}{1cm}{\njut@cap@license@supervisorname}
-  & \multicolumn{2}{c|}{{\njut@value@supervisor}}
-  & {\njut@cap@license@supervisortelphone}
-  & \multicolumn{3}{c|}{{\njut@value@supervisortelphone}} \\
+  & \multicolumn{6}{c|}{{\njut@value@supervisor}}\\
   \hline
 \end{tabular*}
 }
