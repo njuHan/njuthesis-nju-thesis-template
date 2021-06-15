@@ -922,6 +922,7 @@
 \newenvironment{abstract}{%
   \thispagestyle{empty}
   \pdfbookmark[0]{\njut@cap@abstract}{abstract}
+  \addcontentsline{toc}{chapter}{\njut@cap@abstractname}
   \begin{center}
     {\bf\kaishu\zihao{-2}%
 	 \uuline{\njut@cap@abstract@chaptername}}
@@ -962,6 +963,7 @@
 \newenvironment{englishabstract}{%
   \thispagestyle{empty}
   \pdfbookmark[0]{\njut@cap@abstract@en}{englishabstract}
+  \addcontentsline{toc}{chapter}{ABSTRACT}
   \begin{center}
     {\bf\kaishu\zihao{-2}%
 	 \uuline{\njut@cap@abstract@en@chaptername}}
