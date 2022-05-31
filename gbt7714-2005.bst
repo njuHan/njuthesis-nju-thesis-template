@@ -111,7 +111,7 @@ FUNCTION {cap.et.al.en} 		{", et~al"}
 FUNCTION {cap.et.al.zh} 		{", 等"}
 FUNCTION {cap.translate.en} 	{"~trans"}
 FUNCTION {cap.translate.zh} 	{"译"}
-FUNCTION {cap.doi.url} 			{"http://dx.doi.org/"}
+FUNCTION {cap.doi.url} 			{"https://dx.doi.org/"}
 FUNCTION {cap.st.en} 			{"st"}
 FUNCTION {cap.nd.en} 			{"nd"}
 FUNCTION {cap.rd.en} 			{"rd"}
@@ -1492,7 +1492,7 @@ FUNCTION {phdthesis} {                            % void Entry::phdthesis() {
                                                   %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
                                                   %
-FUNCTION {masterthesis} {                         % void Entry::masterthesis() {
+FUNCTION {mastersthesis} {                        % void Entry::mastersthesis() {
   "D" set.mark                                    %   set_mark("D");
   thesis.impl                                     %   thesis_impl();
 }                                                 % }
