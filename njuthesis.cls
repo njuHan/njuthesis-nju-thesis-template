@@ -80,7 +80,7 @@
 \punctstyle{plain}
 \RequirePackage{CJKfntef}
 \RequirePackage{ulem}
-\renewcommand*{\CJKunderlinecolor}{\color{black}}
+%\renewcommand*{\CJKunderlinecolor}{\color{black}}
 \RequirePackage[hyphens]{url}
 \RequirePackage{hyperref}
 \hypersetup{%
@@ -822,32 +822,32 @@
   \cleardoublepage
 }
 \newcommand*{\njut@covertable@onelinetitle}{
-  \begin{tabular}{p{7.3em}c}
-      \makebox[7em][s]{\njut@cap@cover@title}
+  \begin{tabular}{p{5em}c}
+      \bfseries\makebox[5em][s]{\njut@cap@cover@title}
       & \njutunderline[310pt]{\njut@value@title}\\
-      \makebox[7em][s]{\njut@cap@cover@author}
+      \bfseries\makebox[5em][s]{\njut@cap@cover@author}
       & \njutunderline[310pt]{\njut@value@author}\\
-      \makebox[7em][s]{\njut@cap@cover@major}
+      \bfseries\makebox[5em][s]{\njut@cap@cover@major}
       & \njutunderline[310pt]{\njut@value@major}\\
-      \makebox[7em][s]{\njut@cap@cover@researchfield}
+      \bfseries\makebox[5em][s]{\njut@cap@cover@researchfield}
       & \njutunderline[310pt]{\njut@value@researchfield}\\
-      \makebox[7em][s]{\njut@cap@cover@supervisor}
+      \bfseries\makebox[5em][s]{\njut@cap@cover@supervisor}
       & \njutunderline[310pt]{\njut@value@supervisor}\\
   \end{tabular}
 }
 \newcommand*{\njut@covertable@twolinetitle}{
-  \begin{tabular}{p{7.3em}c}
-      \makebox[7em][s]{\njut@cap@cover@title}
+  \begin{tabular}{p{5em}c}
+      \bfseries\makebox[5em][s]{\njut@cap@cover@title}
       & \njutunderline[310pt]{\njut@value@titlea}\\
-      \makebox[7em][s]{}
+      \bfseries\makebox[5em][s]{}
       & \njutunderline[310pt]{\njut@value@titleb}\\
-      \makebox[7em][s]{\njut@cap@cover@author}
+      \bfseries\makebox[5em][s]{\njut@cap@cover@author}
       & \njutunderline[310pt]{\njut@value@author}\\
-      \makebox[7em][s]{\njut@cap@cover@major}
+      \bfseries\makebox[5em][s]{\njut@cap@cover@major}
       & \njutunderline[310pt]{\njut@value@major}\\
-      \makebox[7em][s]{\njut@cap@cover@researchfield}
+      \bfseries\makebox[5em][s]{\njut@cap@cover@researchfield}
       & \njutunderline[310pt]{\njut@value@researchfield}\\
-      \makebox[7em][s]{\njut@cap@cover@supervisor}
+      \bfseries\makebox[5em][s]{\njut@cap@cover@supervisor}
       & \njutunderline[310pt]{\njut@value@supervisor}\\
   \end{tabular}
 }
@@ -856,15 +856,16 @@
   \pdfbookmark[0]{\njut@cap@cover}{cover}
   \begin{center}
     \vskip 10mm
-    \includegraphics[width=1.96cm]{\njut@cap@institute@logo} \\
-    \includegraphics[height=2cm]{\njut@cap@institute@name} \\
-    \vskip 8mm
+    \includegraphics[width=1.6cm]{\njut@cap@institute@logo} \\
+    \vskip 5mm
+    \includegraphics[height=1.5cm]{\njut@cap@institute@name} \\
+    \vskip 3cm
     {\bf\kaishu\zihao{1}\makebox[10em][s]{\njut@cap@cover@thesis}}\\
     \vskip 5mm
     {\bf\kaishu\zihao{1}（\makebox[7em][s]{\njut@cap@cover@apply}）}\\
     \vskip\stretch{1}
     {\bgroup
-    \bfseries\kaishu\zihao{3} %中文封面字号
+    \kaishu\zihao{3} %中文封面字号
     \def\tabcolsep{1pt}
     \def\arraystretch{1.5}
 	\ifdefempty{\njut@value@title}{\njut@covertable@twolinetitle}{\njut@covertable@onelinetitle}
@@ -946,7 +947,7 @@
   \end{center}%
   \normalsize\par%
 }{%
-  %%\cleardoublepage
+  \cleardoublepage
   \clearpage
 }
 \newcommand{\keywords}[1]{%
@@ -985,7 +986,7 @@
   \end{center}%
   \normalsize\par%
 }{%
-  %%\cleardoublepage
+  \cleardoublepage
   \clearpage
 }
 \newcommand{\englishkeywords}[1]{%
@@ -1039,12 +1040,12 @@
 \newcommand*{\njut@license@maketable}{%
 \noindent\zihao{5}%
 \begin{tabular*}{\textwidth}
-    {|C{2.2cm}|C{2cm}|C{1.5cm}|C{2.1cm}|C{1.42cm}C{1.5cm}|C{1.25cm}|}
+    {|C{2cm}|C{2.2cm}|C{1.5cm}|C{2.1cm}|C{1.42cm}C{1.5cm}|C{1.25cm}|}
   \hline
-  \cell{2.2cm}{1cm}{\njut@cap@license@title}
+  \cell{2cm}{1cm}{\njut@cap@license@title}
   & \multicolumn{6}{c|}{\ifdefempty{\njut@value@title}{\njut@value@titlea\njut@value@titleb}{\njut@value@title}} \\
   \hline
-  \cell{2.2cm}{1cm}{\njut@cap@license@studentnum}
+  \cell{2cm}{1cm}{\njut@cap@license@studentnum}
   & {\njut@value@studentnum}
   & {\njut@cap@license@department}
   & \multicolumn{2}{c|}{%
@@ -1053,9 +1054,9 @@
   & {\njut@cap@license@grade}
   & {\njut@value@graduateyear} \\
   \hline
-  \cell{2.2cm}{1.5cm}{\njut@cap@license@category}
+  \cell{2cm}{1.5cm}{\njut@cap@license@category}
   & \multicolumn{3}{c}{
-    \begin{tabular*}{5.6cm}{p{2.8cm}p{2.8cm}}
+    \begin{tabular*}{5.6cm}{p{3.8cm}p{2.8cm}}
        {{\zihao{4}$\Square$}}%
        \njut@cap@license@categorymaster
       & {\zihao{4}$\Square$}%
@@ -1069,10 +1070,10 @@
   & \multicolumn{3}{r|}{%
     \raisebox{-2em}{\njut@cap@license@categoryhint}}\\
   \hline
-  \cell{2.2cm}{1cm}{\njut@cap@license@email}
+  \cell{2cm}{1cm}{\njut@cap@license@email}
   & \multicolumn{6}{c|}{{\njut@value@email}}  \\
   \hline
-  \cell{2.2cm}{1cm}{\njut@cap@license@supervisorname}
+  \cell{2cm}{1cm}{\njut@cap@license@supervisorname}
   & \multicolumn{6}{c|}{{\njut@value@supervisor}}\\
   \hline
 \end{tabular*}
@@ -1094,6 +1095,21 @@
   \njut@cap@datefield)\par
   \vspace{2em}
   \noindent\zihao{-4}\njut@cap@license@remark%
+  \normalfont
+  \cleardoublepage
+}
+\newcommand*{\njut@statement@makedeclaration}{%
+\par\zihao{-4}\njut@cap@statement@declaration
+\vspace{5mm}
+\begin{flushright}
+  \njut@cap@license@sign\njutunderline[3cm]{}\\
+  \njut@cap@datefield\\
+\end{flushright}%
+}
+\newcommand*{\statement}{%
+  \thispagestyle{empty}
+  \nchapter{\njut@cap@statement@chaptername}
+  \njut@statement@makedeclaration
   \normalfont
   \cleardoublepage
 }
