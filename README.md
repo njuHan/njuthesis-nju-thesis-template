@@ -1,6 +1,8 @@
 # NJU-Thesis
 
-　　本项目提供了一个用于排版南京大学学位论文的LaTeX模板。该模板基于校友[Haixing-Hu的模板](https://github.com/Haixing-Hu/nju-thesis)，修复了若干Bug，增加和优化了一些功能细节。可根据文档注释说明，将本模板修改为本科/硕士/博士学位论文模板。  
+本项目提供了一个用于排版南京大学学位论文的LaTeX模板。该模板基于校友[Haixing-Hu的模板](https://github.com/Haixing-Hu/nju-thesis)，修复了若干Bug，增加和优化了一些功能细节。可根据文档注释说明，将本模板修改为本科/硕士/博士学位论文模板。
+
+**如果有Bug修复或者优化相关的建议，请直接提pull requests，或者issues. 感谢大家的贡献！**
   
 ## 使用说明
 * 默认Windows系统下，**安装[CTeX](http://www.ctex.org/CTeXDownload/)完整版**。Mac,Linux操作系统需按照sample.tex中的注释说明，修改字体等参数。已给出样例sample.tex，编辑修改该文件即可。
